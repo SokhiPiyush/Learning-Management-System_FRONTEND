@@ -1,0 +1,15 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="flex bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-3xl m-4">
+      <img [src]="profileImageUrl" class="h-60 w-60 m-4 object-cover shadow-lg rounded-full" alt="Profile Picture">
+      <div class="p-8 flex flex-col justify-between flex-grow">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-800 uppercase mb-2">{{fName}} {{lName}}</h2>
+          <p class="text-base text-gray-600 mt-2">{{about}}</p>
+        </div>
+        <div class="mt-6">
+          <p class="text-lg text-gray-600"><span class="font-semibold">Occupation:</span> {{occupation}}</p>
+          <p class="text-lg text-gray-600 mt-2"><span class="font-semibold">Education:</span> {{education}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,38 @@
+<div class = "lg:w-3/12 mt-2 p-2 shadow-lg mx-auto">
+    <h3 class="text-3xl text-center font-semibold py-5">Register</h3>
+    <form [formGroup]="registerForm" class="flex flex-col">
+        <div class="flex flex-col mt-2 mb-1">
+            <label class="font-semibold">First Name<span *ngIf="registerForm.hasError('required','firstName') && registerForm.controls['firstName'].dirty" class="text-red-500 font-normal">* required</span></label>
+            
+            <input formControlName="firstName" class="p-2 border border-gray-300" type="text" placeholder="FirstName">
+            
+        </div>
+        <div class="flex flex-col mt-1 mb-1">
+            <label>Last Name<span *ngIf="registerForm.hasError('required','lastName') && registerForm.controls['lastName'].dirty" class="text-red-500">* required</span></label>
+            
+            <input formControlName="lastName" class="p-2 border border-gray-300" type="text" placeholder="LastName">
+            
+        </div> 
+        <div class="flex flex-col mt-1 mb-1">
+            <label>Email<span *ngIf="registerForm.hasError('required','email') && registerForm.controls['email'].dirty" class="text-red-500">* required</span></label>
+            <input formControlName="email" class="p-2 border border-gray-300" type="text" placeholder="Email">
+            
+        </div> 
+        <div class="flex flex-col mt-1 mb-1">
+            <label>Password<span *ngIf="registerForm.hasError('required','password') && registerForm.controls['password'].dirty" class="text-red-500">* required</span></label>
+            <input formControlName="password" class="p-2 border border-gray-300" type="password" placeholder="Password">
+            
+        </div> 
+        <div class="flex flex-col mt-1 mb-1">
+            <label>Confirm Password<span *ngIf="registerForm.hasError('required','confirmPassword') && registerForm.controls['confirmPassword'].dirty" class="text-red-500">* required</span>
+                <span *ngIf="registerForm.hasError('confirmPasswordValidator','confirmPassword')" class="text-red-500"> *passwords dont match</span>
+            </label>
+            <input formControlName="confirmPassword" class="p-2 border border-gray-300" type="password" placeholder="Confirm Password">
+            
+        </div>
+        <button  [disabled]="registerForm.invalid" [class.disabled]="registerForm.invalid" (click)="register()" class="bg-indigo-500 p-2 rounded mt-3 text-white">Register</button>
+    </form>
+    <div class="flex justify-center mt-5">
+        <span>Already have Account?</span> <a routerLink="/login" class="text-indigo-600 ml-2 cursor-pointer">Login Here</a>
+    </div>
+</div>
